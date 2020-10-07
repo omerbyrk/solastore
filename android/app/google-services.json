@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "802236904630",
+    "firebase_url": "https://incitter-27bf4.firebaseio.com",
+    "project_id": "incitter-27bf4",
+    "storage_bucket": "incitter-27bf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802236904630:android:e47581d3c8ab4c882a2217",
+        "android_client_info": {
+          "package_name": "com.incitter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802236904630-27h00649i5kettkm5avfumdlo09bstb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTSKwV1DJAVM0uucG37NXyrIkdJ-q9Vok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802236904630-27h00649i5kettkm5avfumdlo09bstb3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "802236904630-mgf5e27mmgacb0cobp15euuv4btrpbgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.incitter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

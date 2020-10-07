@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>802236904630-u2ar13aa4hphq7s2rjopl88ie2r0ki4k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.802236904630-u2ar13aa4hphq7s2rjopl88ie2r0ki4k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSalhwYvbQGbGSUMuV45-goSMwInLf6XQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>802236904630</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.incitter.Incitter</string>
+	<key>PROJECT_ID</key>
+	<string>incitter-27bf4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>incitter-27bf4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:802236904630:ios:3407c9482db496612a2217</string>
+	<key>DATABASE_URL</key>
+	<string>https://incitter-27bf4.firebaseio.com</string>
+</dict>
+</plist>
