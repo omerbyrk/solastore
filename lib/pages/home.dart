@@ -3,11 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:incitter/helpers/advert.dart';
 import 'package:incitter/helpers/my_flutter_app_icons.dart';
-import 'package:permission_handler/permission_handler.dart';
-
-import '../helpers/firebase_messaging.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,36 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    permissionForAndroid();
-    loadJS();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     flutterWebviewPlugin.dispose();
     super.dispose();
-  }
-
-  void permissionForAndroid() async {
-    print(await Permission.storage.isGranted);
-    if (Platform.isAndroid && !(await Permission.storage.isGranted)) {
-      await Permission.storage.request();
-    }
-  }
-
-  void loadJS() async {
-    var givenJS = rootBundle.loadString('assets/javascripts/index.js');
-    return givenJS.then((String js) async {
-      var firebaseToken =
-          "var firebaseToken =' ${await FirebaseMessagingHelper.getToken}'; ";
-      print(firebaseToken);
-      flutterWebviewPlugin.onStateChanged.listen((viewState) async {
-        if (viewState.type == WebViewState.finishLoad) {
-          flutterWebviewPlugin.evalJavascript(firebaseToken + js);
-        }
-      });
-    });
   }
 
   @override
@@ -58,27 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: WebviewScaffold(
-          withZoom: true,
-          withLocalStorage: true,
-          hidden: true,
           withJavascript: true,
           bottomNavigationBar: _buildBottomNavigationBar(),
-          javascriptChannels: <JavascriptChannel>[
-            JavascriptChannel(
-                name: 'Advertisement',
-                onMessageReceived: (JavascriptMessage msg) {
-                  AdvertHelper.showIntersitial();
-                }),
-            JavascriptChannel(
-                name: 'Linkout',
-                onMessageReceived: (JavascriptMessage msg) {
-                  print("linkout");
-                })
-          ].toSet(),
-          url: "https://loogips.com/",
+          url: "https://solastore.com.tr",
         ),
       ),
     );
+  }
+
+  String _getUrl({String path = ""}) {
+    return "https://solastore.com.tr" + path;
   }
 
   Widget _buildBottomNavigationBar() {
@@ -90,29 +51,61 @@ class _HomeScreenState extends State<HomeScreen> {
             length: 5,
             child: TabBar(
               onTap: (index) {
-                switch(index) {
-                  case 1: return;
-                  case 2: return;
-                  case 3: return;
-                  case 4: return;
-                  case 5: return;
+                switch (index) {
+                  case 0:
+                    flutterWebviewPlugin
+                        .reloadUrl(_getUrl(path: "/Home/Index/"));
+                    break;
+                  case 1:
+                    flutterWebviewPlugin
+                        .reloadUrl(_getUrl(path: "/Home/TopSales/"));
+                    break;
+                  case 2:
+                    flutterWebviewPlugin
+                        .reloadUrl(_getUrl(path: "/Home/Cart/"));
+                    break;
+                  case 3:
+                    flutterWebviewPlugin
+                        .reloadUrl(_getUrl(path: "/Home/Discounts/"));
+                    break;
+                  case 4:
+                    flutterWebviewPlugin
+                        .reloadUrl(_getUrl(path: "/Home/Contact/"));
+                    break;
                 }
               },
               tabs: [
                 Tab(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.black87,
+                  icon: Image.asset(
+                    "assets/images/home.png",
+                    width: 35,
+                    height: 35,
                   ),
                 ),
                 Tab(
-                    icon: Icon(
-                  Icons.star,
-                  color: Colors.black87,
+                    icon: Image.asset(
+                  "assets/images/cok-satanlar.png",
+                  width: 35,
+                  height: 35,
                 )),
-                Tab(icon: Icon(Icons.shopping_basket, color: Colors.black87)),
-                Tab(icon: Icon(AppIcons.tag, color: Colors.black87)),
-                Tab(icon: Icon(Icons.person, color: Colors.black87)),
+                Tab(
+                    icon: Image.asset(
+                  "assets/images/sepet.png",
+                  width: 35,
+                  height: 35,
+                )),
+                Tab(
+                    icon: Image.asset(
+                  "assets/images/etiket.png",
+                  width: 35,
+                  height: 35,
+                )),
+                Tab(
+                    icon: Image.asset(
+                  "assets/images/iletisim.png",
+                  width: 35,
+                  height: 35,
+                )),
               ],
             ),
           ),
