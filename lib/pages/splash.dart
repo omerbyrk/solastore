@@ -1,9 +1,8 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:incitter/consts.dart';
-
-
+import 'package:incitter/helpers/notification.dart';
+import 'package:incitter/helpers/onesignal_configurations.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -16,6 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
   double _end = 0.0;
   @override
   void initState() {
+    OneSignalConfigurations.initPlatformState();
+    NotificationHelper.init();
     navigateToHomeScreen();
     runAnimations();
     super.initState();
@@ -24,28 +25,27 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: SafeArea(
-              child: AnimatedContainer(
-                width: _heigth,
-                height: _weight,
-                duration: Duration(milliseconds: 6500),
-                curve: Curves.elasticOut,
-                child: Image.asset(
-                  'assets/images/app_icon.png',
+        backgroundColor: Colors.white,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: SafeArea(
+                child: AnimatedContainer(
+                  width: _heigth,
+                  height: _weight,
+                  duration: Duration(milliseconds: 6500),
+                  curve: Curves.elasticOut,
+                  child: Image.asset(
+                    'assets/images/app_icon.png',
+                  ),
                 ),
               ),
-            ),
-          )
-        ],
-      )
-    );
+            )
+          ],
+        ));
   }
 
   void navigateToHomeScreen() async {

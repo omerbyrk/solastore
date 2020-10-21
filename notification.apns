@@ -1,0 +1,9 @@
+{
+    "aps" : {
+        "alert" : {
+            "title" : "Yeni ürünler indirimde",
+            "body" : "Haftanın yeni ürünleri Solastore'de seni bekliyor!"
+        },
+        "badge" : 5
+    }
+}

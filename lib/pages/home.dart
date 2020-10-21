@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:incitter/helpers/my_flutter_app_icons.dart';
+import 'package:incitter/helpers/app_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           DefaultTabController(
-            length: 5,
+            length: 4,
             child: TabBar(
               onTap: (index) {
                 switch (index) {
@@ -58,17 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     break;
                   case 1:
                     flutterWebviewPlugin
-                        .reloadUrl(_getUrl(path: "/Home/TopSales/"));
+                        .reloadUrl(_getUrl(path: "/Home/Category/91"));
                     break;
                   case 2:
                     flutterWebviewPlugin
-                        .reloadUrl(_getUrl(path: "/Home/Cart/"));
+                        .reloadUrl(_getUrl(path: "/Home/Category/88"));
                     break;
                   case 3:
-                    flutterWebviewPlugin
-                        .reloadUrl(_getUrl(path: "/Home/Discounts/"));
-                    break;
-                  case 4:
                     flutterWebviewPlugin
                         .reloadUrl(_getUrl(path: "/Home/Contact/"));
                     break;
@@ -85,12 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 Tab(
                     icon: Image.asset(
                   "assets/images/cok-satanlar.png",
-                  width: 35,
-                  height: 35,
-                )),
-                Tab(
-                    icon: Image.asset(
-                  "assets/images/sepet.png",
                   width: 35,
                   height: 35,
                 )),

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Solastore</string>
 	<key>CFBundleExecutable</key>
@@ -35,22 +33,6 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3905858662822458~3063355490</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>We need to access your media usage for uploading profile picture</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>We need to access your calendars to service you properly</string>
-	<key>NSContactsUsageDescription</key>
-	<string>We need to access your contacts to service you properly</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need to access your location to service you properly</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to access your location to service you properly</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Through the permisson, you can control the app by motions</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Throught the permission, you can control the app by speech</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

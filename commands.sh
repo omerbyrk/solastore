@@ -1,0 +1,1 @@
+xcrun simctl push booted com.sola.store notification.apns
