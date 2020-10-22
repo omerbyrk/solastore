@@ -1,9 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:incitter/helpers/app_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -133,28 +129,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/*,*/
-/*WebView(
-          initialUrl: "https://incitter.net/",
-          javascriptMode: JavascriptMode.unrestricted,
-          debuggingEnabled: false,
-          javascriptChannels: <JavascriptChannel>[
-            JavascriptChannel(
-                name: 'Advertisement',
-                onMessageReceived: (JavascriptMessage msg) {
-                  AdvertHelper.showIntersitial();
-                })
-          ].toSet(),
-          onPageFinished: (String s) async {
-            var firebaseToken =
-                "var firebaseToken =' ${await FirebaseMessagingHelper.getToken}'; ";
-            String javascripts =
-                await rootBundle.loadString("assets/javascripts/index.js");
-            this.cont.evaluateJavascript(firebaseToken + javascripts);
-          },
-          onWebViewCreated: (cont) {
-            this.cont = cont;
-          },
-        ),*/
-
-// ignore: must_be_immutable
