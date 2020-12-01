@@ -54,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     break;
                   case 1:
                     flutterWebviewPlugin
-                        .reloadUrl(_getUrl(path: "/Home/Category/91"));
+                        .reloadUrl(_getUrl(path: "/Home/BestSeller/"));
                     break;
                   case 2:
                     flutterWebviewPlugin
-                        .reloadUrl(_getUrl(path: "/Home/Category/88"));
+                        .reloadUrl(_getUrl(path: "/Home/Sale/"));
                     break;
                   case 3:
                     flutterWebviewPlugin
